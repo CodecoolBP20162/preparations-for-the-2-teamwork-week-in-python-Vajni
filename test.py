@@ -1,6 +1,5 @@
 import unittest
 
-
 def IsOdd(n):
     
     if n % 2 == 0:
@@ -21,7 +20,9 @@ class IsOddTests(unittest.TestCase):
 
 
 def main():
-    unittest.main()
 
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        suite = unittest.TestLoader().loadTestsFromTestCase(IsOddTests)
+        unittest.TextTestRunner(verbosity=2).run(suite)
+
+main()
